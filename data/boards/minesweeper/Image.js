@@ -1,0 +1,1 @@
+return `/public/images/protofito_${board?.['game state'] ?? 'waitting'}.png`

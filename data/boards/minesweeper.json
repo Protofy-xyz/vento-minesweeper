@@ -1,0 +1,405 @@
+{
+    "name": "minesweeper",
+    "cards": [
+        {
+            "key": "action_1754311428495",
+            "width": 2,
+            "height": 6,
+            "icon": "refresh-ccw",
+            "type": "action",
+            "name": "new game",
+            "displayResponse": false,
+            "rules": [
+                "devuelve una cuadricula de 8 x 8 casillas",
+                "cada una de estas casillas va a tener un identificador que indique su posición en la cuadricula, una propiedad discovered que por defecto será false y una propiedad death. Siempre tiene que haber 10 elementos aleatoreos cuya propiedad death sea true, el resto seran false."
+            ],
+            "displayButtonIcon": true,
+            "displayIcon": false,
+            "params": {
+                "gridSize": "",
+                "mineCount": ""
+            },
+            "configParams": {
+                "gridSize": {
+                    "visible": true,
+                    "defaultValue": "8",
+                    "type": "number"
+                },
+                "mineCount": {
+                    "visible": true,
+                    "defaultValue": "10",
+                    "type": "number"
+                }
+            },
+            "displayTitle": true,
+            "displayFrame": true,
+            "buttonLabel": " "
+        },
+        {
+            "key": "action_1754396750914",
+            "width": 2,
+            "height": 6,
+            "icon": "zap",
+            "type": "action",
+            "name": "discovered cells",
+            "displayResponse": true,
+            "params": {
+                "row": "",
+                "column": "",
+                "action": "",
+                "gridSize": ""
+            },
+            "configParams": {
+                "row": {
+                    "visible": true,
+                    "defaultValue": "",
+                    "type": "number"
+                },
+                "column": {
+                    "visible": true,
+                    "defaultValue": "",
+                    "type": "number"
+                },
+                "action": {
+                    "visible": true,
+                    "defaultValue": "",
+                    "type": "string"
+                },
+                "gridSize": {
+                    "visible": true,
+                    "defaultValue": "8",
+                    "type": "number"
+                }
+            },
+            "rules": [
+                "Devuelve una cuadrícula de 8 filas y 8 columnas, todas con el valor false.",
+                "Si params.action es \"reset\" o \"clear\", devuelve una cuadrícula vacía (todo false).",
+                "Si recibes los parámetros row y column, cambia el valor de esa celda a true.",
+                "Antes de modificar la cuadrícula, copia el estado anterior de board[name]. Si no existe, usa una cuadrícula vacía."
+            ],
+            "displayButton": false,
+            "displayIcon": false
+        },
+        {
+            "key": "action_1754311040155_vento_copy_eyu230tu6diaz9c4gvtc",
+            "width": 2,
+            "height": 6,
+            "icon": "zap",
+            "type": "action",
+            "name": "discover cell",
+            "displayResponse": false,
+            "displayTitle": true,
+            "displayIcon": false,
+            "params": {
+                "row": "",
+                "column": ""
+            },
+            "configParams": {
+                "row": {
+                    "visible": true,
+                    "defaultValue": "",
+                    "type": "number"
+                },
+                "column": {
+                    "visible": true,
+                    "defaultValue": "",
+                    "type": "number"
+                }
+            }
+        },
+        {
+            "key": "value_1754298572994_vento_copy_yv8yic6f9al6bqovvgztnu",
+            "width": 2,
+            "height": 8,
+            "icon": "table-properties",
+            "name": "Game",
+            "description": "Display a React component",
+            "type": "value",
+            "params": {},
+            "configParams": {}
+        },
+        {
+            "key": "action_1754381711148_vento_copy_13q38exqo5c8d31o8p8lggv",
+            "width": 2,
+            "height": 6,
+            "icon": "activity",
+            "type": "action",
+            "name": "game state",
+            "displayResponse": true,
+            "params": {
+                "board": "",
+                "discoveredCells": ""
+            },
+            "configParams": {
+                "board": {
+                    "visible": true,
+                    "defaultValue": "",
+                    "type": "array"
+                },
+                "discoveredCells": {
+                    "visible": true,
+                    "defaultValue": "",
+                    "type": "json"
+                }
+            },
+            "displayButton": false
+        },
+        {
+            "key": "value_1754413036336",
+            "width": 1,
+            "height": 4,
+            "icon": "image",
+            "name": "Image",
+            "description": "Display an image that scales without distortion",
+            "type": "value",
+            "editorOptions": {
+                "defaultTab": "value"
+            }
+        }
+    ],
+    "autopilot": false,
+    "layouts": {
+        "lg": [
+            {
+                "w": 15,
+                "h": 9,
+                "x": 0,
+                "y": 0,
+                "i": "action_1754311428495",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 15,
+                "h": 8,
+                "x": 66,
+                "y": 0,
+                "i": "action_1754396750914",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 15,
+                "h": 9,
+                "x": 51,
+                "y": 9,
+                "i": "action_1754311040155_vento_copy_eyu230tu6diaz9c4gvtc",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 36,
+                "h": 18,
+                "x": 15,
+                "y": 0,
+                "i": "value_1754298572994_vento_copy_yv8yic6f9al6bqovvgztnu",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 15,
+                "h": 6,
+                "x": 0,
+                "y": 9,
+                "i": "action_1754381711148_vento_copy_13q38exqo5c8d31o8p8lggv",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 15,
+                "h": 9,
+                "x": 51,
+                "y": 0,
+                "i": "value_1754413036336",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            }
+        ],
+        "md": [
+            {
+                "w": 17,
+                "h": 8,
+                "x": 0,
+                "y": 0,
+                "i": "action_1754311428495",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 15,
+                "h": 8,
+                "x": 49,
+                "y": 0,
+                "i": "action_1754396750914",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 15,
+                "h": 8,
+                "x": 49,
+                "y": 8,
+                "i": "action_1754311040155_vento_copy_eyu230tu6diaz9c4gvtc",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 32,
+                "h": 16,
+                "x": 17,
+                "y": 0,
+                "i": "value_1754298572994_vento_copy_yv8yic6f9al6bqovvgztnu",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 17,
+                "h": 7,
+                "x": 0,
+                "y": 8,
+                "i": "action_1754381711148_vento_copy_13q38exqo5c8d31o8p8lggv",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "i": "value_1754413036336",
+                "x": 0,
+                "y": 16,
+                "w": 8,
+                "h": 5,
+                "isResizable": true
+            }
+        ],
+        "sm": [
+            {
+                "w": 1,
+                "h": 6,
+                "x": 0,
+                "y": 15,
+                "i": "action_1754311428495",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 1,
+                "h": 4,
+                "x": 1,
+                "y": 21,
+                "i": "action_1754396750914",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 1,
+                "h": 9,
+                "x": 0,
+                "y": 21,
+                "i": "action_1754311040155_vento_copy_eyu230tu6diaz9c4gvtc",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 2,
+                "h": 15,
+                "x": 0,
+                "y": 0,
+                "i": "value_1754298572994_vento_copy_yv8yic6f9al6bqovvgztnu",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 1,
+                "h": 6,
+                "x": 1,
+                "y": 15,
+                "i": "action_1754381711148_vento_copy_13q38exqo5c8d31o8p8lggv",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "i": "value_1754413036336",
+                "x": 1,
+                "y": 29,
+                "w": 1,
+                "h": 5,
+                "isResizable": true
+            }
+        ],
+        "xs": [
+            {
+                "w": 1,
+                "h": 7,
+                "x": 0,
+                "y": 9,
+                "i": "action_1754311428495",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 1,
+                "h": 7,
+                "x": 0,
+                "y": 16,
+                "i": "action_1754396750914",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 1,
+                "h": 7,
+                "x": 0,
+                "y": 23,
+                "i": "action_1754311040155_vento_copy_eyu230tu6diaz9c4gvtc",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 1,
+                "h": 9,
+                "x": 0,
+                "y": 0,
+                "i": "value_1754298572994_vento_copy_yv8yic6f9al6bqovvgztnu",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "w": 1,
+                "h": 7,
+                "x": 0,
+                "y": 30,
+                "i": "action_1754381711148_vento_copy_13q38exqo5c8d31o8p8lggv",
+                "moved": false,
+                "static": false,
+                "isResizable": true
+            },
+            {
+                "i": "value_1754413036336",
+                "x": 0,
+                "y": 37,
+                "w": 1,
+                "h": 5,
+                "isResizable": true
+            }
+        ]
+    }
+}

@@ -2,7 +2,14 @@ const isProduction = process.env.NODE_ENV === 'production';
 const disableProdApi = false
 
 const config = {
-    "services": [], // This will be populated with services from apps/services.js files
+    "services": [
+        {
+            "name": "adminpanel",
+            "disabled": false,
+            "description": "Frontend services, providing the web user interface based on nextjs",
+            "route": (req) => process.env.SITE_URL ?? 'http://localhost:3000'
+        }
+    ], // This will be populated with services from apps/services.js files
     "routers": []
 }
 
